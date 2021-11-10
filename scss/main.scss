@@ -1,0 +1,39 @@
+/*--------------------------------*/
+/*------abstract importing--------*/
+/*--------------------------------*/
+@import "./abstracts/functions";
+@import "./abstracts/mixins";
+@import "./abstracts/variables";
+
+/*--------------------------------*/
+/* ------base importing-----------*/
+/*--------------------------------*/
+@import "./base/animation";
+@import "./base/base";
+@import "./base/typography";
+@import "./base/utilities";
+/*--------------------------------*/
+/*------components importing------*/
+/*--------------------------------*/
+
+@import "./components/button";
+@import "./components/bg-video";
+@import"./components/cards";
+@import "./components/composition";
+@import "./components/features";
+@import "./components/form";
+@import "./components/popup";
+@import "./components/story";
+
+/*--------------------------------*/
+/*--------layout importing--------*/
+/*--------------------------------*/
+@import "./layout/footer";
+@import "./layout/header";
+@import "./layout/grid";
+@import "./layout/navigation";
+
+/*--------------------------------*/
+/*--------pages importing----------*/
+/*--------------------------------*/
+@import "./pages/home";

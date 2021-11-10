@@ -1,0 +1,102 @@
+.footer {
+    background-color: $color-gray-dark-3;
+    padding: 5rem 0;
+    font-size: 1.7rem;
+    font-weight: 500;
+    @include respond(tab-land){
+        padding: 3rem 2rem;
+        text-align: center;
+    }
+
+    &__img-box {
+        text-align: center;
+        @include respond(tab-land){
+            margin-bottom:4rem !important;
+       }
+       @include respond(tab-port){
+            margin-bottom:4rem !important;
+       }
+    }
+
+    &__img {
+        width: 30rem;
+        height: auto;
+        
+        @include respond(phone){
+            width: 20rem;
+        }
+    }
+
+    &__navigation {
+        border-top: 1px solid $color-gray;
+        display: inline-block;
+        padding-top: 2rem;
+      
+       
+    }
+
+    &__list {
+        list-style: none;
+        @include respond (tab-land){
+            margin-right:0 !important;
+            
+        }
+        
+
+    }
+
+    &__item {
+        display: inline-block;
+        &:not(:last-child){
+            padding-right: 3rem;
+            @include respond(tab-land){
+                padding-right: 1.3rem;
+            }
+           
+        }
+       
+
+    }
+
+    &__link {
+        &:link,
+        &:visited {
+            background-color: $color-gray-dark-3;
+            text-decoration: none;
+            display: inline-block;
+            color: $color-gray-light;
+            transition: all 0.5s;
+           
+        }
+        &:hover,
+        &:active {
+            color:  $color-primary;
+            box-shadow: 0 1rem 2rem rgba($color-black, .4);  
+        }
+    }
+    &__link--left:hover{
+        transform: rotate(6deg) scale(1.6);
+    }
+    &__link--right:hover{
+        transform: rotate(-6deg) scale(1.6);
+    }
+    
+ 
+
+    &__paragraph {
+        border-top: 1px solid $color-gray;
+        font-size: 1.6;
+        text-transform: capitalize;
+        padding-top: 2rem;
+        width: 80%;
+        float: right;
+        text-align: center;
+        @include respond(tab-port){
+            width: 100%;
+            text-align: center;
+            float: none;
+        }
+
+    }
+
+}

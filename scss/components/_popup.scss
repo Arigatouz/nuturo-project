@@ -1,0 +1,150 @@
+.popup{
+    position: fixed;
+    top:0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba($color-black, 0.8);
+    z-index: 7000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    
+    @supports (backdrop-filter: blur(10)){
+        -webkit-backdrop-filter: blur(10);
+        -moz-backdrop-filter: blur(10);
+        backdrop-filter: blur(10);
+    }
+    &__container{
+        @include absCenter;
+        width: 75%;
+        background-color: $color-white;
+        box-shadow: 0 2rem 4rem rgba($color-black, .2);
+        display: table;
+        overflow: hidden;
+        border-radius: 6px;
+        transform:translate(-50%,-50%) scale(0.2);
+        transition: all .5s .2s;
+        opacity: 0;
+        @include respond(tab-land){
+            position: relative;
+            display: block;
+            width: 100%;
+        }
+        // visibility: hidden;
+    }
+    &__left{
+        display: table-cell;
+        width: 33.333333%;
+        @include respond(tab-land){
+            display: block;
+            float: left;
+            
+        }
+       
+    }
+    &__right{
+        display: table-cell;
+        padding: 3rem 5rem;
+        width: 66.666667%;
+        vertical-align: middle;
+        overflow: hidden;
+        backface-visibility: hidden;
+        @include respond(tab-land){
+            display: inline-block;
+            width: 100%;
+        }
+    }
+
+
+    &__img{
+        overflow: hidden;
+        backface-visibility: hidden;
+        display: block;
+        width: 100%;
+            @include respond(phone){
+                display: none;
+            }
+        &--1{
+            @include respond (tab-land){
+                position: absolute;
+                bottom: 0;
+                right: 0%;
+                width:25%;
+             } 
+               
+        }
+        &--2{
+            @include respond (tab-land){
+                position: absolute;
+                bottom: -0.5%;
+                right: 26%;
+                width:25%;
+             }   
+        }     
+    }
+    &__text{
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+
+        //column
+        -moz-column-count: 2;
+        -moz-column-gap: 4rem; //1em = 14px;
+        -moz-column-rule: 2px solid $color-gray-light-2;
+        column-count: 2;
+        column-gap: 3rem;
+        column-rule: 2px solid $color-gray-light-2;
+
+        // hyphens
+        -moz-hyphens: auto;
+        -ms-hyphens: auto;
+        -webkit-hyphens: auto;
+        hyphens: auto;
+        @include respond(tab-land){
+            display: block;
+            -moz-column-count: 1;
+            -moz-column-gap: none; //1em = 14px;
+            -moz-column-rule: none;
+            column-count: 1;
+            column-gap: none;
+            column-rule: none;
+            padding-bottom: 4rem !important;
+        }
+        @include respond(phone){
+            padding: 0;
+            margin: 0;
+            font-size: 1.4rem;
+            padding-bottom: 2rem !important;
+        }
+    }
+    &__close {
+        position: absolute;
+        top: 2.5rem;
+        right: 2.5rem;
+        display: block;
+        color: $color-gray-dark-2;
+        font-size: 6rem;
+        line-height: 1;
+        outline: none;
+        @include respond(phone){
+            top: 1.5rem;
+            right: 1.5rem;
+            font-size: 4rem;
+        }
+        &:hover {
+            color: $color-primary;
+        }
+    
+    }
+ 
+    &:target {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    &:target &__container {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}

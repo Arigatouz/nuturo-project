@@ -1,0 +1,91 @@
+.story{
+    font-size: 1.7rem;
+    background-color: rgba($color-white , 0.75);
+    box-shadow: 0 3rem 6rem rgba($color-black, 0.3);
+    padding: 9rem;
+    padding-left:12rem;
+    transform: skewX(-12deg);
+    border-radius: 2rem;
+    @include respond(tab-port){
+        padding: 5rem;
+        padding-left:7rem;
+     transform: skew(0);
+     width: 100%;
+    }
+    @include respond(phone){
+        padding:2rem 2rem ;
+
+        transform: skew(0);
+        width: 100%;
+    }
+    &__shape{
+        width: 19rem;
+        height: 19rem;
+        float: left;
+        -webkit-shape-outside: circle(50% at 50% 36%);
+        shape-outside: circle(50% at 50% 36%);
+        -webkit-clip-path: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        transform: skewX(12deg) translate(-3rem, -1rem);
+        position: relative;
+        overflow: hidden;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        backface-visibility: hidden;
+        text-align: center;
+        text-transform: uppercase;
+     
+        @include respond (tab-port){
+            transform: skew(0);
+            margin-right: 2rem;
+            width: 15rem;
+            height: 15rem;
+        }
+        @include respond (phone){
+            transform: skew(0);
+            
+            width: 12rem;
+            height: 12rem;
+        }
+    }   
+    &__text{
+        transform:skewX(12deg) translateY( 2rem);
+        line-height: 2;
+        @include respond(tab-port){
+            transform:skewX(0deg) translateY( 2rem);
+        }
+    }
+    &__img{
+        height: 100%;
+        transform: translateX(-5rem) scale(1.4);
+        transition: all .5s;
+        overflow: hidden;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    &__caption{
+        position:absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50% , 60%);
+        color: $color-white;
+        font-size: 3rem; 
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        line-height: 1;
+        opacity: 0;
+        transition: all 0.5s;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+    &:hover &__img{
+        transform:translateX(-4rem) scale(1.1);
+        filter:blur(.5rem) brightness(70%);
+    }
+    &:hover &__caption{
+        transform: translate(-50% , -50%);
+        opacity: 1;
+    }
+    
+}

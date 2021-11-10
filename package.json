@@ -1,0 +1,12 @@
+{
+  "name": "project-1",
+  "version": "1.0.0",
+  "description": "landing page for Natours",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ali gamal Ali",
+  "license": "ISC",
+  "devDependencies": {}
+}
